@@ -1,12 +1,13 @@
   
    .container{
      align-items: center;
-      
+        border: lightgray solid 2px; 
    }
     .container .box {  
                 width:540px;  
                 margin:auto;  
-                display:table;  
+                display:table;
+               
             }  
             .container .box .box-row {  
                 display:table-row;  
@@ -30,10 +31,10 @@
     .info-card{
     position: absolute;
     transform: translate(10%, 0%);
-    border: 5px solid orange;
+    border: 2px solid lightgrey;
     padding: 10px;
-    margin-left: 30%;
-    width: 30%;
+    margin-left: 20%;
+    width: 50%;
    
 }
     .personal-info {
@@ -56,6 +57,10 @@ margin-right: 2px;
 }
 
  .button{
-  margin-left: 20%;
-  width: 50%;
+  margin-left: 30%;
+  width: 30%;
+}
+.posts-list{
+  margin-bottom: 5px;;
+   border-bottom: 1px solid black;
 }

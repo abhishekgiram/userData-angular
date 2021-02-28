@@ -8,7 +8,9 @@ import { AllDataFromApiService } from '../all-data-from-api.service';
 export class AllUsersComponent implements OnInit {
   usersData:any=[];
   showuserList:boolean=true;
+  showPosts:boolean=true;
   selectedUser:any=[];
+  postsOfUser:any=[];
   constructor(
     public allData:AllDataFromApiService,
 
@@ -34,7 +36,26 @@ this.allData.allUsers().subscribe(res=>{
   }
   gotoUserList(){
     this.showuserList=true;
+    this.showPosts=true;
     this.selectedUser=[];
+    this.postsOfUser=[];
+  }
+
+  posts(id){
+    console.log(id);
+    this.allData.postsByUser().subscribe((posts)=>{
+        console.log(posts);
+      //  posts.forEach((element)=>{
+      //     if(element.userId === id){
+      //         this.postsOfUser.push(element);
+      //     }
+      //   })
+      this.postsOfUser = posts.filter((value)=>{
+        return value.userId===id;
+      })
+      console.log(this.postsOfUser)
+    })
+    this.showPosts=false;
   }
 
 }

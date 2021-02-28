@@ -15,5 +15,11 @@ allUsers(){
   }))
 }
 
+postsByUser(){
+  return this.http.get<any>(`${this.baseUrl}posts`).pipe(map((res)=>{
+  return res
+  }))
+}
+
 
 }
