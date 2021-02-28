@@ -11,7 +11,7 @@ baseUrl="https://jsonplaceholder.typicode.com/"
 
 allUsers(){
   return this.http.get<any>(`https://jsonplaceholder.typicode.com/users`).pipe(map(res=>{
-    console.log(res);
+    return res
   }))
 }
 

@@ -1,0 +1,28 @@
+
+<div class="container" *ngIf="showuserList">
+  <h1>All users List</h1>
+   <div class="box" *ngFor="let user of usersData">  
+                <div class="box-row">  
+                    <div class="box-cell ">  
+                      {{user.id}}
+                    </div>
+                    <div class="box-cell ">  
+                      {{user.username}}
+                    </div>
+                    <div class="box-cell ">  
+                      {{user.name}}
+                    </div>
+                    <div class="box-cell ">  
+                      <button (click)="Details(user.id)">Details</button>
+                    </div>
+                </div>
+   </div>                    
+</div>
+
+<div *ngIf="!showuserList">
+  <div>{{selectedUser[0].name}}<div>
+    <div>{{selectedUser[0].email}}<div>
+  <div>{{selectedUser[0].username}}<div>     
+  <div>{{selectedUser[0].phone}}<div>    
+   <button (click)="gotoUserList()">okay !!</button>
+</div>
