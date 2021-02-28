@@ -10,7 +10,7 @@ baseUrl="https://jsonplaceholder.typicode.com/"
   ) { }
 
 allUsers(){
-  return this.http.get<any>(`https://jsonplaceholder.typicode.com/users`).pipe(map(res=>{
+  return this.http.get<any>(`${this.baseUrl}users`).pipe(map(res=>{
     return res
   }))
 }

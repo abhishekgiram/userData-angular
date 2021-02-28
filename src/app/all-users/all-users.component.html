@@ -1,6 +1,20 @@
-
+<div class="main-container" >
 <div class="container" *ngIf="showuserList">
   <h1>All users List</h1>
+  <div class="box">
+    <div class="box-row"> 
+       <div class="box-cell--header "> 
+         <h3>ID</h3>
+       </div>
+     <div class="box-cell-header "> 
+         <h3>User Name</h3>
+       </div>
+    <div class="box-cell-header "> 
+         <h3>Name</h3>
+       </div>
+    </div>
+
+  </div>
    <div class="box" *ngFor="let user of usersData">  
                 <div class="box-row">  
                     <div class="box-cell ">  
@@ -19,10 +33,72 @@
    </div>                    
 </div>
 
-<div *ngIf="!showuserList">
-  <div>{{selectedUser[0].name}}<div>
-    <div>{{selectedUser[0].email}}<div>
-  <div>{{selectedUser[0].username}}<div>     
-  <div>{{selectedUser[0].phone}}<div>    
+<div class="info-card" *ngIf="!showuserList">
+  <h2>Personal Information</h2>
+  <div class="personal-info">
+  <div class="name">
+    <label ><h4>Name:</h4></label>
+    {{selectedUser[0].name}}
+    </div>
+    <div class="name">
+    <label><h4>Email:</h4></label>
+      {{selectedUser[0].email}}
+    </div>
+    <div class="name">
+   <label><h4>Username:</h4></label>
+      {{selectedUser[0].username}}
+    </div>    
+    <div class="name">
+   <label><h4>Phone:</h4></label>
+      {{selectedUser[0].phone}}
+    </div>   
+    <div class="name">
+   <label><h4>Website:</h4></label>
+      {{selectedUser[0].website}}
+    </div> 
+  </div> 
+   <h2>Address</h2>
+  <div class="personal-info">
+  <div class="name">
+    <label><h4>Suite:</h4></label>
+    {{selectedUser[0].address.suite}}
+    </div>
+    <div class="name">
+    <label><h4>street:</h4></label>
+      {{selectedUser[0].address.street}}
+    </div>
+      <div class="name">
+    <label><h4>city:</h4></label>
+      {{selectedUser[0].address.city}}
+    </div>  
+     <div class="name">
+    <label><h4>Zipcode:</h4></label>
+      {{selectedUser[0].address.zipcode}}
+    </div>   
+     <div class="name">
+    <label><h4>Geo-Location:</h4></label>
+      {{selectedUser[0].address.geo.lat}},
+      {{selectedUser[0].address.geo.lng}}
+    </div>
+  </div>  
+    <h2>Comapany Information</h2>
+  <div class="personal-info">
+  <div class="name">
+    <label ><h4>Company Name:</h4></label>
+    {{selectedUser[0].company.name}}
+    </div>
+     <div class="name">
+    <label ><h4>catchPhrase:</h4></label>
+    {{selectedUser[0].company.catchPhrase}}
+    </div>
+    <div class="name">
+    <label ><h4>Base Line:</h4></label>
+    {{selectedUser[0].company.bs}}
+    </div>
+  
+</div>
+  <div class="button">
    <button (click)="gotoUserList()">okay !!</button>
+    </div>
+</div>
 </div>
