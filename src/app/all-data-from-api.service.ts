@@ -20,6 +20,11 @@ postsByUser(){
   return res
   }))
 }
+albums(){
+  return this.http.get<any>('https://jsonplaceholder.typicode.com/albums').pipe(map((res)=>{
+    return res;
+  }))
+}
 
 
 }

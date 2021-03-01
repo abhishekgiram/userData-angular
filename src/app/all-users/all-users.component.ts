@@ -11,6 +11,10 @@ export class AllUsersComponent implements OnInit {
   showPosts:boolean=true;
   selectedUser:any=[];
   postsOfUser:any=[];
+  photosByUser:any=[];
+  photosByAblum:any=[];
+  showPhoto:boolean=false;
+  
   constructor(
     public allData:AllDataFromApiService,
 
@@ -37,6 +41,7 @@ this.allData.allUsers().subscribe(res=>{
   gotoUserList(){
     this.showuserList=true;
     this.showPosts=true;
+    this.showPhoto=false;
     this.selectedUser=[];
     this.postsOfUser=[];
   }
@@ -57,5 +62,24 @@ this.allData.allUsers().subscribe(res=>{
     })
     this.showPosts=false;
   }
+
+  // photos(id){
+  //   console.log(id);
+  //   this.allData.albums().subscribe((res)=>{
+  //   //  console.log(res);
+  //     this.photosByUser= res.filter((photoid)=>{
+  //       return photoid.userId===id
+  //     })
+  //     console.log(this.photosByUser)
+
+  //     //this.photosByAblum= this.photosByUser.filter((photoata)=>{
+  //      // return photoata.albumId==photoAlbumId
+  //    // })
+  //     this.showPhoto=true;
+  //     this.showuserList=true;
+  //     this.showPosts=true;
+  //   })
+   
+  // }
 
 }

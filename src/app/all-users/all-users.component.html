@@ -32,7 +32,7 @@
                 </div>
    </div>                    
 </div>
-<h1 *ngIf="!showuserList && showPosts"> User Details </h1>
+<h1 *ngIf="!showuserList && showPosts "> User Details </h1>
 <div class="info-card" *ngIf="!showuserList && showPosts">
   <h2>Personal Information</h2>
   <div class="personal-info">
@@ -99,9 +99,11 @@
 </div>
   <div class="button">
    <button (click)="posts(selectedUser[0].id)">Show posts</button>
+  <!-- <button (click)="photos(selectedUser[0].id)">show photos</button>-->
     </div>
+    
 </div>
-<div *ngIf="!showPosts ">
+<div *ngIf="!showPosts  ">
  <div *ngFor="let post of postsOfUser">
   <div class="posts-list">
  <li> <label>Title :- </label>{{post.title}}</li>
@@ -110,4 +112,15 @@
 </div>
    <button (click)="gotoUserList()">show user List</button>
 </div>
+<!--
+<div *ngIf="showPhoto">
+ <div *ngFor="let post of photosByUser">
+  <div class="posts-list">
+ <li> <label>Title :- </label>{{post.title}}</li>
+  </div>
+</div>
+
+   <button (click)="gotoUserList()">show user List</button>
+</div>
+-->
 </div>
